@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>index</title>
+        <style>
+            h1{
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            div{
+                text-align: center;
+            }
+            p{
+                text-align: center;
+            }
+            .send{
+                width:85px;
+                height: 30px;
+            }
+            
+            .maintext{
+                width:650px;
+                height:30px;
+            }
+            .db{
+                margin-top: 10px;
+                width:325px;
+                height:50px;
+            }
+            .imglist{
+                width: 850px;
+                height: 430px;
+                border: 0.3rem solid;
+                margin:0 auto;
+            }
+            .textbox{
+                margin: 10px;
+                display:flex;
+            }
+            img{
+                width: 270px;
+                height: 200px;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <h1>広告生成AI</h1>
+        {% if img_name_list %}
+        <div class="imglist">
+            {% for img_name in img_name_list %}
+            <img src="data:image/jpeg;base64,{{img_name}}">
+            <!-- a href="data:image/jpeg;base64,{{img_name}}" download="image.jpg">ダウンロード</a -->
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if translatedList %}
+        <div>
+            <h2>{{translatedList}}</h2>
+        </div>
+        {% endif %}
+
+        <div class="textbox">
+            <form action="/" method="post">
+                <input type="text" class="maintext" name="form">
+                <button type="submit" class="send">送信</button>
+            </form>
+            {% if translatedWord %}
+            <form action="/" method="post">
+                <input type="hidden" value="{{translatedWord}}" name="form">
+                <button type="submit" class="send">再送信</button>
+            </form>
+            <button class="db">Download</button>
+            {% endif %}
+        </div>
+    </body>
+</html>
