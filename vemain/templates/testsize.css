@@ -1,0 +1,22 @@
+.imgbox{
+    width: 850px;
+    margin:0 auto;
+}
+.setmessage{
+    text-align: center;
+    margin-top: 0px;
+}
+.textbox{
+    width: 650px;
+    height: 30;
+}
+.sendbutton{
+    width: 85px;
+    height: 30;
+}
+.Rebutton{
+    width: 85px;
+    height: 30;
+}
+
+

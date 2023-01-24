@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
+        h1{
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        div{
+            text-align: center;
+        }
+        p{
+            text-align: center;
+        }
+        .send{
+            width:85px;
+            height: 30px;
+        }
+        
+        .maintext{
+            width:650px;
+            height:30px;
+        }
+        .db{
+            margin-top: 10px;
+            width:325px;
+            height:50px;
+        }
+        .imglist{
+            width: 850px;
+            height: 430px;
+            border: 0.3rem solid;
+            margin:0 auto;
+        }
+        .textbox{
+            margin: 10px;
+        }
+        img{
+            width: 270px;
+            height: 200px;
+            
+        }
+        .img00{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>広告生成AI</h1>
+    <div class="imglist">
+        <img src="../img/nnn.png" class="img00">
+        <img src="../img/nnn.png" class="img00">
+        <img src="../img/nnn.png" class="img00">
+        <img src="../img/nnn.png">
+        <img src="../img/nnn.png">
+        <img src="../img/nnn.png">
+    </div>
+
+    {% if text %}
+    <p>{{text}}</p>
+    {% endif %}
+    <div class="textbox">
+        <form method="POST">
+            <input type="text" class="maintext" name="text" id="text">
+            <button type="submit" class="send">送信</button>
+            <button class="send">再送信</button><br>
+        </form>
+        <button class="db">Download</button>
+    </div>
+</body>
+</html>
